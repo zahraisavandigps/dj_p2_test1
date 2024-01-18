@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header_reference %}
+    <link rel="stylesheet" href="{% static 'blogs/index.css' %}">
+    <link rel="stylesheet" href="{% static 'blogs/all_post.css' %}">
+{% endblock %}
+{% block title_page %}
+	Login
+{% endblock %}
+
+{% block content_page %}
+	<h1>Login</h1>
+    <form action="" method="post">
+    {% csrf_token %}
+{#    {{ form_login.as_p }}#}
+    <input type="text" name="user" placeholder="please username"><br><br>
+    <input type="text" name="password" placeholder="please password"> <br><br>
+    <button type="submit">Login</button>
+    </form>
+{% endblock %}

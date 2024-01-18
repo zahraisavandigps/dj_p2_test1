@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body style="background-color: #a7f5db">
+<div style="line-height: 30px">
+    <ul>
+        <h1 style="text-align: center">Product List</h1>
+        <b>counts:</b>{{ numbers }}<br>
+        <b>average_product price:</b>{{ info.price__avg }}<br>
+        <b>Max:</b>{{ info.price__max }}<br>
+        <b>Min:</b>{{ info.price__min }}
+        <hr color="purple" width="90%" size="5">
+        {#<hr color="red" width="90%">#}
+    </ul>
+</div>
+<div style="line-height: 30px">
+<ul>
+    {% for product in all_product %}
+        <li>
+            <a href="{{ product.slug }}">{{ product.title }}</a>
+            <b>price:</b>{{ product.price }}
+            <b>Description:</b>{{ product.description }}
+        </li>
+    {% endfor %}
+</ul>
+</div>
+</body>
+</html>

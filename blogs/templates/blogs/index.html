@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title_page %}
+    Page Index
+{% endblock %}
+
+{% block header_reference %}
+    <link rel="stylesheet" href="{% static 'blogs/index.css' %}">
+
+{% endblock %}
+
+{% block content_page %}
+{#    <h1>Welcome to Site</h1>#}
+{#    {{ a }}#}
+
+    {#first section#}
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blogs/images/all_languages.jfif' %}" alt="programs">
+            <h2>Web Site</h2>
+        </header>
+        <p>Hello, My Name is Isavandi, I'm a Developer</p>
+    </section>
+
+    {#second section#}
+    <section id="latest-posts">
+        <h2>Leatest Posts</h2>
+{#        <ul>#}
+{#            <li><a href="">Test</a></li>#}
+{#            <li><a href="">Test</a></li>#}
+{#            <li><a href="">Test</a></li>#}
+{#        </ul>#}
+        <ul>
+            {% for post in leatest_posts %}
+                <li>
+                    {% include 'blogs/includes/post.html' %}
+                </li>
+
+            {% endfor %}
+
+        </ul>
+    </section>
+
+    {#third section#}
+    <section id="about">
+        <h3>Explanation about the site</h3>
+        <p>The site is includeing the training og the programming languages</p>
+        <p>The programming languages such as: Python, Django, Html, CSS , ...</p>
+    </section>
+{% endblock %}
+
+
